@@ -1,0 +1,40 @@
+<body>
+
+<div class="login-container">
+
+  <div class="login-box-header">
+    <img src="https://cdn-images-1.medium.com/max/1600/1*nbJ41jD1-r2Oe6FsLjKaOg.png" class="angular-image">
+    Angular 5 courses</div>
+  <div class="login-box-body">
+
+    <mat-grid-list [cols]="9" rowHeight="75px">
+      <mat-grid-tile [rowspan]="1" class="login-icon">
+        <mat-icon>person</mat-icon>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="7">
+        <mat-input-container class="justifier">
+          <input matInput placeholder="Username" [(ngModel)]="loginValue">
+        </mat-input-container>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+    <mat-grid-list [cols]="9" rowHeight="100px">
+      <mat-grid-tile [rowspan]="1" class="login-icon">
+        <mat-icon>lock</mat-icon>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="7">
+        <mat-input-container class="justifier">
+          <input matInput type="password" placeholder="Password" [(ngModel)]="passwordValue">
+        </mat-input-container>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+    <button (click)="login(loginValue,passwordValue)" mat-raised-button class="login-button">
+      <mat-icon>input</mat-icon>
+      Login
+    </button>
+
+  </div>
+
+</div>
+</body>
