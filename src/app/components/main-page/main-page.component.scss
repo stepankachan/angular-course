@@ -1,4 +1,4 @@
-.example-container {
+.main-container {
   width: 100%;
   height: 100vh;
   border: 1px solid rgba(0, 0, 0, 0.5);
@@ -11,10 +11,18 @@
   justify-content: center;
 }
 
-.example-sidenav {
+.main-sidenav {
   padding: 20px;
 }
 
-.header{
+.main-spacer {
+  flex: 1 1 auto;
+}
 
+.main-expansion-panel-description {
+  flex-grow: 20;
+}
+
+.main-toggle-group{
+  width: 100%;
 }
