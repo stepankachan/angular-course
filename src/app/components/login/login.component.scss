@@ -2,7 +2,7 @@
 
 body {
   height: 100vh;
-  background: url(https://subtlepatterns.com/patterns/sativa.png) repeat fixed;
+  background: #fafafa;
   font-family: 'Open Sans', sans-serif;
   font-weight: 200;
   margin: -8px !important;
@@ -14,7 +14,7 @@ body {
   left: 45%;
   top: 30%;
   padding: 0 !important;
-  background-color: rgba(0, 0, 0, 0.26);
+
   -webkit-box-shadow: 2px 4px 58px -20px rgba(0, 0, 0, 1);
   -moz-box-shadow: 2px 4px 58px -20px rgba(0, 0, 0, 1);
   box-shadow: 2px 4px 58px -20px rgba(0, 0, 0, 1);
@@ -32,7 +32,7 @@ body {
   width: auto;
   height: 100%;
   padding: 5% 5% 5% 5%;
-  color: #fafafa;
+  color: #495057;
 }
 
 .login-icon {
@@ -47,8 +47,8 @@ body {
 .login-button {
   width: 100%;
   padding: 1.5% !important;
-  background-color: rgba(0, 0, 0, 0.26);
-  font-size: 1.5em;
+  background-color: #6c757d;
+  font-size: 1.0em;
   color: #fff !important;
 }
 
@@ -58,5 +58,4 @@ body {
   height: 2.5em;
   position: sticky;
   right: 55%;
-
 }

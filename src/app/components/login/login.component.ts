@@ -25,7 +25,7 @@ export class LoginComponent {
   login(login, password) {
     console.log(this.loginValue + ' ' + this.passwordValue);
     if (this.users.find(user => this.isUserMatches(user.login, user.password)) !== undefined) {
-      this.router.navigate(['main']);
+      this.router.navigate(['main'], { queryParams: { user: this.loginValue}, queryParamsHandling: 'merge' });
     } else {
       this.router.navigate(['error']);
     }

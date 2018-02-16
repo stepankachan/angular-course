@@ -1,22 +1,107 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <span>First Row</span>
+    <button type="button" mat-button (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    Angular JS courses materials
+    <span class="main-spacer"></span>
+    <mat-icon>account_circle</mat-icon>
+    <span>{{username}}</span>
+    <button mat-button (click)="logout()">
+      <mat-icon>input</mat-icon>
+    </button>
   </mat-toolbar-row>
 </mat-toolbar>
 
-<mat-drawer-container class="example-container" [autosize]="true">
-  <mat-drawer [opened]="true" #drawer class="example-sidenav" mode="side">
-    <p>Auto-resizing sidenav</p>
-    <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
-    <button (click)="showFiller = !showFiller" mat-raised-button>
-      Toggle extra text
-    </button>
+<mat-drawer-container class="main-container" [autosize]="true">
+  <mat-drawer [opened]="true" #drawer class="main-sidenav" mode="side">
+    <mat-accordion class="main-headers-align">
+      <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" [hideToggle]="true">
+
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Lesson 1
+          </mat-panel-title>
+          <mat-panel-description class="main-expansion-panel-description">
+            Getting familiar with Angular 5 and TypeScript
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <mat-button-toggle-group #group="matButtonToggleGroup">
+          <mat-button-toggle value="left">
+            <mat-icon>lightbulb_outline</mat-icon>
+            Documentation
+          </mat-button-toggle>
+          <mat-button-toggle>
+            <mat-icon>chrome_reader_mode</mat-icon>
+            Source code
+          </mat-button-toggle>
+        </mat-button-toggle-group>
+
+        <mat-action-row>
+          <button mat-button color="primary" (click)="nextStep()">Next</button>
+        </mat-action-row>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" [hideToggle]="true">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Lesson 2
+          </mat-panel-title>
+          <mat-panel-description class="main-expansion-panel-description">
+            Building first Angular project, basic binding
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <mat-button-toggle-group #group="matButtonToggleGroup">
+          <mat-button-toggle value="left">
+            <mat-icon>lightbulb_outline</mat-icon>
+            Documentation
+          </mat-button-toggle>
+          <mat-button-toggle value="center">
+            <mat-icon>chrome_reader_mode</mat-icon>
+            Source code
+          </mat-button-toggle>
+        </mat-button-toggle-group>
+
+        <mat-action-row>
+          <button mat-button color="warn" (click)="prevStep()">Previous</button>
+          <button mat-button color="primary" (click)="nextStep()">Next</button>
+        </mat-action-row>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" [hideToggle]="true">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Lesson 3
+          </mat-panel-title>
+          <mat-panel-description class="main-expansion-panel-description">
+            UI Frameworks and styling with scss
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <mat-button-toggle-group #group="matButtonToggleGroup">
+          <mat-button-toggle value="left">
+            <mat-icon>lightbulb_outline</mat-icon>
+            Documentation
+          </mat-button-toggle>
+          <mat-button-toggle value="center">
+            <mat-icon>chrome_reader_mode</mat-icon>
+            Source code
+          </mat-button-toggle>
+        </mat-button-toggle-group>
+
+        <mat-action-row>
+          <button mat-button color="warn" (click)="prevStep()">Previous</button>
+          <button mat-button color="primary" (click)="nextStep()">End</button>
+        </mat-action-row>
+      </mat-expansion-panel>
+
+    </mat-accordion>
   </mat-drawer>
 
   <div class="example-sidenav-content">
-    <button type="button" mat-button (click)="drawer.toggle()">
-      Toggle sidenav
-    </button>
+    Content
   </div>
 
 </mat-drawer-container>
