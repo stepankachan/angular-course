@@ -1,90 +1,21 @@
-import {CdkTableModule} from '@angular/cdk/table';
 import {HttpClientModule} from '@angular/common/http';
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-
-import {
-  MatAutocompleteModule,
-  MatButtonModule,
-  MatButtonToggleModule,
-  MatCardModule,
-  MatCheckboxModule,
-  MatChipsModule,
-  MatDatepickerModule,
-  MatDialogModule,
-  MatDividerModule,
-  MatExpansionModule,
-  MatGridListModule,
-  MatIconModule,
-  MatInputModule,
-  MatListModule,
-  MatMenuModule,
-  MatNativeDateModule,
-  MatPaginatorModule,
-  MatProgressBarModule,
-  MatProgressSpinnerModule,
-  MatRadioModule,
-  MatRippleModule,
-  MatSelectModule,
-  MatSidenavModule,
-  MatSliderModule,
-  MatSlideToggleModule,
-  MatSnackBarModule,
-  MatSortModule,
-  MatStepperModule,
-  MatTableModule,
-  MatTabsModule,
-  MatToolbarModule,
-  MatTooltipModule,
-} from '@angular/material';
+import {MatNativeDateModule,} from '@angular/material';
 import {BrowserModule} from '@angular/platform-browser';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {LoginComponent} from './components/login/login.component';
+import {LoginComponent} from './login/components/login/login.component';
 import {AppComponent} from './app.component';
-import {MainPageComponent} from './components/main-page/main-page.component';
+import {MainPageComponent} from './main/components/main/main-page.component';
 import {AppRoutingModule} from './app.routing';
-import {ErrorPageComponent} from './components/error-page/error-page.component';
-
-@NgModule({
-  exports: [
-    CdkTableModule,
-    MatAutocompleteModule,
-    MatButtonModule,
-    MatButtonToggleModule,
-    MatCardModule,
-    MatCheckboxModule,
-    MatChipsModule,
-    MatStepperModule,
-    MatDatepickerModule,
-    MatDialogModule,
-    MatDividerModule,
-    MatExpansionModule,
-    MatGridListModule,
-    MatIconModule,
-    MatInputModule,
-    MatListModule,
-    MatMenuModule,
-    MatNativeDateModule,
-    MatPaginatorModule,
-    MatProgressBarModule,
-    MatProgressSpinnerModule,
-    MatRadioModule,
-    MatRippleModule,
-    MatSelectModule,
-    MatSidenavModule,
-    MatSliderModule,
-    MatSlideToggleModule,
-    MatSnackBarModule,
-    MatSortModule,
-    MatTableModule,
-    MatTabsModule,
-    MatToolbarModule,
-    MatTooltipModule,
-  ]
-})
-export class DemoMaterialModule {
-}
+import {ErrorPageComponent} from './error/components/error-page/error-page.component';
+import {LoginModule} from './login/login.module';
+import {MainModule} from './main/main.module';
+import {PdfViewerModule} from 'ng2-pdf-viewer';
+import {ErrorModule} from './error/error.module';
+import {MaterialUIModule} from './material-ui.module';
+import {MenuItemComponent} from './main/components/menu-item/menu-item.component';
 
 @NgModule({
   imports: [
@@ -92,13 +23,17 @@ export class DemoMaterialModule {
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
-    DemoMaterialModule,
+    MaterialUIModule,
     MatNativeDateModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    LoginModule,
+    MainModule,
+    ErrorModule,
+    PdfViewerModule
   ],
   entryComponents: [AppComponent],
-  declarations: [AppComponent, LoginComponent, MainPageComponent, ErrorPageComponent],
+  declarations: [AppComponent, LoginComponent, MainPageComponent, ErrorPageComponent, MenuItemComponent],
   bootstrap: [AppComponent],
   providers: []
 })
