@@ -1,0 +1,35 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button type="button" mat-button (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    Angular JS courses materials
+    <span class="main-spacer"></span>
+    <mat-icon>account_circle</mat-icon>
+    <span>{{username}}</span>
+    <button mat-button (click)="logout()">
+      <mat-icon>input</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-drawer-container class="main-container" [autosize]="true">
+  <mat-drawer [opened]="true" #drawer class="main-sidenav" mode="side">
+    <mat-accordion class="main-headers-align">
+      <app-menu-item *ngFor="let lesson of lessons" [lesson]="lesson" [itemNumber]="lesson.number"
+                     (click)="setPdfSource(lesson.pdfSource)"></app-menu-item>
+    </mat-accordion>
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <mat-tab-group class="main-tabs">
+      <mat-tab label="Lecture">
+        <pdf-viewer [src]="currentPDFSource"></pdf-viewer>
+      </mat-tab>
+      <mat-tab label="Source code">Source code</mat-tab>
+      <mat-tab label="Download *.zip">Download *.zip</mat-tab>
+    </mat-tab-group>
+
+  </div>
+
+</mat-drawer-container>
